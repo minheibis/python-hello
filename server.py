@@ -1,5 +1,6 @@
 from flask import Flask
 import os
+import time
 
 PORT = 8080
 name = os.environ['NAME']
@@ -14,6 +15,7 @@ app = Flask(__name__)
 @app.route("/")
 def root():
   print("Handling web request. Returning message.")
+  time.sleep(10)
   result = MESSAGE.encode("utf-8")
   return result
 
